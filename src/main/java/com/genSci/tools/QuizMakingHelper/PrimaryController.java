@@ -14,7 +14,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 
 public class PrimaryController {
-	String[] itemArray = { "Tex", "Cloze:Multi", "Cloze:Num" };
+	String[] itemArray ={ "Tex", "Moodle 穴埋め:多肢選択", "Moodle 穴埋め:数値入力（数値選択）" };
 	ObservableList<String> availableChoices = FXCollections.observableArrayList(itemArray);
 	List<String> questionList = new ArrayList<String>();
 	@FXML
@@ -25,7 +25,15 @@ public class PrimaryController {
 	TextArea codeArea;
 	@FXML
 	ChoiceBox<String> choice;
+	@FXML
+	private void clearSrcArea() {
+		srcArea.clear();
+	}
 
+	@FXML
+	private void clearCodeArea() {
+		codeArea.clear();
+	}
 	@FXML
 	private void initialize() {
 		choice.setItems(availableChoices);
